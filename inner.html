@@ -1,0 +1,409 @@
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  /* Custom Navbar Styling */
+  .navbar {
+    background: linear-gradient(to right, #007bff, #00c6ff); /* Blue gradient */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-brand,
+  .nav-link,
+  .dropdown-item {
+    color: #fff !important;
+    font-weight: 500;
+  }
+
+  .nav-link:hover,
+  .dropdown-item:hover {
+    color: #ffe600 !important; /* Yellow on hover */
+  }
+
+  .nav-link.disabled {
+    color: #ccc !important;
+  }
+
+  /* Search box customization */
+  .form-control {
+    border-radius: 20px;
+    padding: 8px 15px;
+    border: none;
+  }
+
+  .btn-outline-success {
+    border-radius: 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+  }
+
+  .btn-outline-success:hover {
+    background-color: #218838;
+  }
+
+  /* Dropdown Menu Background */
+  .dropdown-menu {
+    background-color: #007bff;
+  }
+
+  .dropdown-item {
+    color: white;
+  }
+
+  .dropdown-item:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="inner.html">🏠 HOME</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="edu.html">🏫 Educations</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="lshops.html">🏪 Old Shops</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="vplaces.html">🏞️ Visit Places</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            🙏 Religions
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Temple</a></li>
+            <li><a class="dropdown-item" href="#">Mosque</a></li>
+            <li><a class="dropdown-item" href="#">Church</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Other</a></li>
+          </ul>
+        </li>
+
+       
+      </ul>
+
+      <!-- Search Form -->
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search village info...">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Bootstrap JS (bundle with Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheikh Pura Qadeem - Village Website</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #90EE90 0%, #32CD32 100%);
+        min-height:100vh;
+        overflow-x:hidden;
+    }
+   
+    .header {
+        text-align:center;
+        padding:60px 20px;
+        animation:fadeInDown 1.5s ease-out;
+    }
+    .main-title {
+        font-size:6vw; /* Responsive */
+        color:white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        margin-bottom:20px;
+        animation:glow 2s ease-in-out infinite alternate;
+    }
+    .subtitle {
+        font-size:3vw; /* Responsive */
+        color:#f0f8ff;
+        margin-bottom:30px;
+        animation:slideInLeft 1.8s ease-out;
+    }
+    .welcome-card {
+        background: rgba(255,255,255,0.95);
+        border-radius:20px;
+        padding:40px;
+        margin:40px auto;
+        max-width:1000px;
+        box-shadow:0 20px 40px rgba(0,0,0,0.1);
+        animation:slideInUp 2s ease-out;
+        backdrop-filter: blur(10px);
+    }
+    .developer-info {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        color:white;
+        padding:30px;
+        border-radius:15px;
+        margin:30px 0;
+        text-align:center;
+        animation:pulse 3s ease-in-out infinite;
+    }
+    .features-grid {
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        gap:30px;
+        margin:40px 0;
+    }
+    .feature-card {
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        text-align:center;
+        box-shadow:0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation:fadeInUp 2.5s ease-out;
+    }
+    .feature-card:hover {
+        transform:translateY(-10px);
+        box-shadow:0 20px 40px rgba(0,0,0,0.2);
+    }
+    .feature-icon {
+        font-size:3rem;
+        margin-bottom:20px;
+        animation:bounce 2s ease-in-out infinite;
+    }
+    .contact-section {
+        background: rgba(255,255,255,0.9);
+        padding:40px;
+        border-radius:20px;
+        margin:40px 0;
+        text-align:center;
+        animation:fadeIn 3s ease-out;
+    }
+    .floating-elements {
+        position: fixed;
+        top:0; left:0;
+        width:100%; height:100%;
+        pointer-events:none;
+        z-index:-1;
+    }
+    .floating-circle {
+        position:absolute;
+        border-radius:50%;
+        background: rgba(255,255,255,0.1);
+        animation:float 6s ease-in-out infinite;
+    }
+    .circle1{width:80px;height:80px;top:20%;left:10%;animation-delay:0s;}
+    .circle2{width:120px;height:120px;top:60%;right:15%;animation-delay:2s;}
+    .circle3{width:60px;height:60px;bottom:20%;left:20%;animation-delay:4s;}
+    @keyframes fadeInDown {from{opacity:0; transform:translateY(-50px);}to{opacity:1; transform:translateY(0);}}
+    @keyframes slideInLeft {from{opacity:0; transform:translateX(-100px);}to{opacity:1; transform:translateX(0);}}
+    @keyframes slideInUp {from{opacity:0; transform:translateY(50px);}to{opacity:1; transform:translateY(0);}}
+    @keyframes fadeInUp {from{opacity:0; transform:translateY(30px);}to{opacity:1; transform:translateY(0);}}
+    @keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
+    @keyframes glow {from{text-shadow:2px 2px 4px rgba(0,0,0,0.3);}to{text-shadow:2px 2px 20px rgba(255,255,255,0.5);}}
+    @keyframes pulse {0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
+    @keyframes bounce {0%,20%,50%,80%,100%{transform:translateY(0);}40%{transform:translateY(-10px);}60%{transform:translateY(-5px);}}
+    @keyframes float {0%,100%{transform:translateY(0px) rotate(0deg);}50%{transform:translateY(-20px) rotate(180deg);}}
+    @media (max-width:768px){
+        .main-title{font-size:10vw;}
+        .subtitle{font-size:5vw;}
+        .welcome-card{padding:20px;margin:20px;}
+        .feature-card{padding:20px;}
+        iframe{width:100%; height:800px;} /* Google form responsive */
+    }
+	
+
+/* Container always full responsive */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* iframe responsive fix */
+iframe {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+}
+
+/* Mobile screen adjustments */
+@media (max-width: 768px) {
+    .main-title { font-size: 8vw; }
+    .subtitle { font-size: 4.5vw; }
+    .welcome-card { padding: 15px; margin: 15px; }
+    .feature-card { padding: 15px; }
+    
+    /* iframe ko screen ke according adjust karna */
+    iframe {
+        min-height: 800px;  /* fixed height ki jagah thoda flexible */
+        height: auto;
+    }
+
+    /* Audio ko center karna */
+    audio {
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+  .demo-banner {
+            position: fixed;
+            top: 0%;
+            left: 46%;
+            right: 0;
+			width:28%;
+            background: rgba(255, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+           
+            font-weight: bold;
+            z-index: 1000;
+            animation: pulse 1s infinite;
+        }
+
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Iframe ko full width aur normal height dena */
+.form-wrapper iframe {
+    width: 100%;
+    min-height: 700px; /* desktop */
+    border: none;
+}
+
+/* Mobile ke liye */
+@media (max-width: 768px) {
+    .form-wrapper iframe {
+        min-height: 500px;   /* chhoti screen par height kam */
+        transform: scale(0.95);  /* form thoda shrink */
+        transform-origin: top left;
+    }
+}
+
+
+</style>
+</head>
+<body>
+ <div class="demo-banner">
+        🚧 ONLY DEMO - This is a preview version 🚧
+    </div>
+
+<div class="floating-elements">
+    <div class="floating-circle circle1"></div>
+    <div class="floating-circle circle2"></div>
+    <div class="floating-circle circle3"></div>
+    <div class="floating-circle" style="width:90px; height:90px; top:40%; right:25%; animation-delay:1s;"></div>
+    <div class="floating-circle" style="width:70px; height:70px; bottom:40%; right:10%; animation-delay:3s;"></div>
+    <div class="floating-circle" style="width:100px; height:100px; top:70%; left:5%; animation-delay:5s;"></div>
+</div>
+
+<div class="container">
+    <div class="header">
+        <h1 class="main-title">Sheikh Pura Qadeem Website Demo</h1>
+		<h5><i>CREATED BY SAYYED NABEEL</i></h5>
+        <p class="subtitle">District Saharanpur, Uttar Pradesh</p>
+    </div>
+<audio controls>
+  <source src="https://ncs.io/track/download/784a2ccc-5ace-48d1-8af1-9da55c383960" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+    <div class="welcome-card">
+        <h2 style="color:#333; margin-bottom:20px; font-size:2rem;">Welcome to Our Village Website Demo</h2>
+		<h5><li>CREATED BY SAYYED NABEEL Haider</li></h5>
+        <p style="color:#666; font-size:1.1rem; line-height:1.6;">
+            We are building a comprehensive website for Sheikh Pura Qadeem village. This platform will showcase everything about our beautiful village - from history and culture to local businesses and events.
+        </p>
+
+        <div style="background:linear-gradient(45deg,#32CD32,#228B22); color:white; padding:25px; border-radius:15px; margin:25px 0; text-align:center; animation:pulse 2s ease-in-out infinite;">
+            <h3 style="margin-bottom:15px; font-size:1.5rem;">🚀 Full Info Website Coming Soon!</h3>
+            <p style="font-size:1.2rem; font-weight:bold;">This will be the first ever website for Sheikh Pura Qadeem</p>
+            <p style="margin-top:10px;">Complete village information, services, and community features</p>
+        </div>
+
+        <div class="developer-info">
+            <h3 style="margin-bottom:15px;">Website Developer</h3>
+            <p style="font-size:1.2rem; font-weight:bold;">Sayyed Nabeel Haider</p>
+            <p>Proud resident of Sheikh Pura Qadeem</p>
+            <p style="margin-top:10px; font-style:italic;">Building digital bridges for our community</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🏘️</div>
+                <h3 style="color:#333; margin-bottom:15px;">Village Information</h3>
+                <p style="color:#666;">Complete details about our village, its history, and landmarks</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3 style="color:#333; margin-bottom:15px;">Community</h3>
+                <p style="color:#666;">Connect with fellow villagers and stay updated with local news</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏪</div>
+                <h3 style="color:#333; margin-bottom:15px;">Local Business</h3>
+                <p style="color:#666;">Discover and support local shops and services in our area</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3 style="color:#333; margin-bottom:15px;">Events</h3>
+                <p style="color:#666;">Stay informed about upcoming festivals and community gatherings</p>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h3 style="color:#333; margin-bottom:20px; font-size:1.8rem;">Want to Add Something?</h3>
+            <p style="color:#666; font-size:1.1rem; margin-bottom:20px;">
+                If you would like to add information about your business, event, or any other village-related content to our website, please feel free to contact us.
+            </p>
+            <p style="color:#4ecdc4; font-weight:bold; font-size:1.2rem;">
+                Contact form will be available soon!
+            </p>
+		
+
+           <!-- Google Form iframe -->
+<div class="form-wrapper">           
+		   <h2>Contact Us</h2>
+			
+          <iframe  src="https://docs.google.com/forms/d/e/1FAIpQLSexAAJOzNZZgWYWAkdj9E6A72gV3DeApgwSoUNKp0nYdFlG_w/viewform?embedded=true"></iframe>
+ </div>
+ </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    alert("Hello! Website loaded successfully.");
+	
+});
+</script>
+
+</body>
+</html>

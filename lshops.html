@@ -1,0 +1,442 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  /* Custom Navbar Styling */
+  .navbar {
+    background: linear-gradient(to right, #007bff, #00c6ff); /* Blue gradient */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-brand,
+  .nav-link,
+  .dropdown-item {
+    color: #fff !important;
+    font-weight: 500;
+  }
+
+  .nav-link:hover,
+  .dropdown-item:hover {
+    color: #ffe600 !important; /* Yellow on hover */
+  }
+
+  .nav-link.disabled {
+    color: #ccc !important;
+  }
+
+  /* Search box customization */
+  .form-control {
+    border-radius: 20px;
+    padding: 8px 15px;
+    border: none;
+  }
+
+  .btn-outline-success {
+    border-radius: 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+  }
+
+  .btn-outline-success:hover {
+    background-color: #218838;
+  }
+
+  /* Dropdown Menu Background */
+  .dropdown-menu {
+    background-color: #007bff;
+  }
+
+  .dropdown-item {
+    color: white;
+  }
+
+  .dropdown-item:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="inner.html">🏠 HOME</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="edu.html">🏫 Educations</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="lshops.html">🏪 Old Shops</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="vplaces.html">🏞️ Visit Places</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            🙏 Religions
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Temple</a></li>
+            <li><a class="dropdown-item" href="#">Mosque</a></li>
+            <li><a class="dropdown-item" href="#">Church</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Other</a></li>
+          </ul>
+        </li>
+
+      
+
+      </ul>
+
+      <!-- Search Form -->
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search village info...">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Bootstrap JS (bundle with Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheikh Pura Qadeem - Purane Dukaan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            font-style: italic;
+        }
+
+        .shops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .shop-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shop-card:nth-child(1) { animation-delay: 0.1s; }
+        .shop-card:nth-child(2) { animation-delay: 0.2s; }
+        .shop-card:nth-child(3) { animation-delay: 0.3s; }
+        .shop-card:nth-child(4) { animation-delay: 0.4s; }
+        .shop-card:nth-child(5) { animation-delay: 0.5s; }
+        .shop-card:nth-child(6) { animation-delay: 0.6s; }
+        .shop-card:nth-child(7) { animation-delay: 0.7s; }
+        .shop-card:nth-child(8) { animation-delay: 0.8s; }
+        .shop-card:nth-child(9) { animation-delay: 0.9s; }
+        .shop-card:nth-child(10) { animation-delay: 1.0s; }
+        .shop-card:nth-child(11) { animation-delay: 1.1s; }
+        .shop-card:nth-child(12) { animation-delay: 1.2s; }
+        .shop-card:nth-child(13) { animation-delay: 1.3s; }
+        .shop-card:nth-child(14) { animation-delay: 1.4s; }
+        .shop-card:nth-child(15) { animation-delay: 1.5s; }
+
+        .shop-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .shop-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .shop-card:hover::before {
+            left: 100%;
+        }
+
+        .shop-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+            text-align: center;
+        }
+
+        .shop-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .shop-type {
+            color: #7f8c8d;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .shop-description {
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .established {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-weight: bold;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            color: white;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .shops-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+		 .demo-banner {
+            position: fixed;
+            top: 0%;
+            left: 46%;
+            right: 0;
+			width:28%;
+            background: rgba(255, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+           
+            font-weight: bold;
+            z-index: 1000;
+            animation: pulse 1s infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏪 Sheikh Pura Qadeem</h1>
+            <p>Purane Zamane Ki Dukanen - Historical Shops</p>
+        </div>
+
+      <div class="shop-card">
+    <div class="established">1970</div>
+    <div class="shop-icon">CHAMMAN HARDWARE</div>
+    <div class="shop-name">Chamman Hardware Store</div>
+    <div class="shop-type">Hardware & Building Materials</div>
+    <div class="shop-description">One of the oldest hardware stores since 1970, owned by the Sayyed family. A trusted shop where you can buy anything related to hardware and building needs.</div>
+</div>
+<hr>
+<br>
+<div class="shop-card">
+    <div class="established">1978</div>
+    <div class="shop-icon">📚</div>
+    <div class="shop-name">Shamim Book & Stationery Store</div>
+    <div class="shop-type">Books & Stationery</div>
+    <div class="shop-description">Since 1948, this shop provides books, pencils, and all stationery items at the most affordable prices.</div>
+</div>
+<hr>
+<br>
+
+           <div class="shop-card">
+    <div class="established">2001</div>
+    <div class="shop-icon">MALIK MEDICAL STORE</div>
+    <div class="shop-name">Malik Medical Store</div>
+    <div class="shop-type">Herbal & Modern Medicine</div>
+    <div class="shop-description">They provide very good and effective medicines. Trusted family pharmacy.</div>
+</div>
+<hr>
+<br>
+<div class="shop-card">
+    <div class="established">1995</div>
+    <div class="shop-icon">DR. AALAM</div>
+    <div class="shop-name">Dr. Aalam</div>
+    <div class="shop-type">MBBS Specialist</div>
+    <div class="shop-description">They can diagnose almost every disease and provide effective treatment with MBBS expertise.</div>
+</div>
+<hr>
+<br>
+<div class="shop-card">
+    <div class="established">1970</div>
+    <div class="shop-icon">VIKRAM PARCHUN STORE</div>
+    <div class="shop-name">Vikram Kirana Store</div>
+    <div class="shop-type">Grocery & General Store</div>
+    <div class="shop-description">A trusted shop since 1970 where you can find everything—food items, ghee, oil, and daily essentials.</div>
+</div>
+<hr>
+<br>
+<div class="shop-card">
+    <div class="established">1980</div>
+    <div class="shop-icon">HAJI AHSAN STORE</div>
+    <div class="shop-name">Haji Ahsan Kirana Store</div>
+    <div class="shop-type">Grocery & General Store</div>
+    <div class="shop-description">A well-known kirana store where you can find all daily essentials, groceries, ghee, and oils at good quality.</div>
+</div>
+<hr>
+<br>
+<div class="shop-card">
+    <div class="established">2001</div>
+    <div class="shop-icon">SUBHASH BOOKS</div>
+    <div class="shop-name">Subhash Book Store</div>
+    <div class="shop-type">Books & Stationery</div>
+    <div class="shop-description">A popular book shop since 2001 offering all kinds of books, study materials, and stationery items.</div>
+</div>
+<hr>
+<br>
+<div class="shop-card">
+    <div class="established">1990</div>
+    <div class="shop-icon">MONU GENERAL STORE</div>
+    <div class="shop-name">Monu General Store</div>
+    <div class="shop-type">Toys, Artificial Items & General Store</div>
+    <div class="shop-description">A trusted shop since 1990 where you can find everything—daily essentials, toys, and artificial items.</div>
+</div>
+<hr>
+<br>
+
+
+           <div class="shop-card">
+    <div class="established">1970</div>
+    <div class="shop-icon">RAO HUSNA STORE</div>
+    <div class="shop-name">Rao Husna Kirana Store</div>
+    <div class="shop-type">Wholesale Grocery & General Store</div>
+    <div class="shop-description">A big and well-known kirana store since 1970 where you can place even very large orders for groceries and daily essentials.</div>
+</div>
+<hr>
+<br>
+<div class="shop-card">
+    <div class="established">1960</div>
+    <div class="shop-icon">LALA LACHH MICHAND STORE</div>
+    <div class="shop-name">Lala Lachh Michand Kirana & Hardware</div>
+    <div class="shop-type">Kirana & Hardware Items</div>
+    <div class="shop-description">A well-established store since 1960, known for both kirana and hardware items. One of the biggest shops in the area serving groceries and hardware needs.</div>
+</div>
+<hr>
+<br>
+<div class="shop-card">
+    <div class="established">1960</div>
+    <div class="shop-icon">RAO SHERJANG</div>
+    <div class="shop-name">Rao Sherjang Parchun Godam</div>
+    <div class="shop-type">Wholesale Parchun & Education</div>
+    <div class="shop-description">Rao Sherjang runs a very large parchun (wholesale general store) godam since 1960. He is also the Director of R.S. International School, contributing to both business and education in the area.</div>
+</div>
+<hr>
+<br>
+<div class="shop-card">
+    <div class="established">1990</div>
+    <div class="shop-icon">SHAMSHAD BAKERY</div>
+    <div class="shop-name">Shamshad Bakery</div>
+    <div class="shop-type">Bakery, Sweets & Breakfast Items</div>
+    <div class="shop-description">A famous bakery since 1990 offering a variety of sweets, breakfast items, and delicious cakes. A trusted place for fresh and tasty treats.</div>
+</div>
+
+
+          
+
+        <div class="footer">
+            <p>🏛️ Sheikh Pura Qadeem - Preserving Our Heritage 🏛️</p>
+            <p>These shops have been serving the community for generations</p>
+        </div>
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'980708a5650533e4',t:'MTc1ODA5NTY0OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
