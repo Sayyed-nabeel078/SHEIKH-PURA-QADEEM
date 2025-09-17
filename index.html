@@ -13,11 +13,7 @@
         min-height:100vh;
         overflow-x:hidden;
     }
-    .container {
-        max-width:1200px;
-        margin:0 auto;
-        padding:20px;
-    }
+   
     .header {
         text-align:center;
         padding:60px 20px;
@@ -119,29 +115,66 @@
         .feature-card{padding:20px;}
         iframe{width:100%; height:800px;} /* Google form responsive */
     }
-	iframe {
-    width: 100%;      /* Full width of container */
-    max-width: 100%;  /* Prevent overflow */
-    min-height: 800px; /* Minimum height for desktop */
-    height: auto;      /* Adjust height automatically */
+	
+
+/* Container always full responsive */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* iframe responsive fix */
+iframe {
+    width: 100%;
+    min-height: 600px;
     border: none;
 }
+
+/* Mobile screen adjustments */
 @media (max-width: 768px) {
+    .main-title { font-size: 8vw; }
+    .subtitle { font-size: 4.5vw; }
+    .welcome-card { padding: 15px; margin: 15px; }
+    .feature-card { padding: 15px; }
+    
+    /* iframe ko screen ke according adjust karna */
     iframe {
-        height: 1200px;  /* Form ka height badhao mobile me */
+        min-height: 800px;  /* fixed height ki jagah thoda flexible */
+        height: auto;
+    }
+
+    /* Audio ko center karna */
+    audio {
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 300px;
     }
 }
-audio{
-margin-left:45%;
-margin-top:-20%;
-width:160px;
-height:160px;
- 
-}
+
+  .demo-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
 
 </style>
 </head>
 <body>
+ <div class="demo-banner">
+        🚧 ONLY DEMO - This is a preview version 🚧
+    </div>
 
 <div class="floating-elements">
     <div class="floating-circle circle1"></div>
