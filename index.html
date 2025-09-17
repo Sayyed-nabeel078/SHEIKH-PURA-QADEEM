@@ -168,6 +168,29 @@ iframe {
             animation: pulse 2s infinite;
         }
 
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Iframe ko full width aur normal height dena */
+.form-wrapper iframe {
+    width: 100%;
+    min-height: 700px; /* desktop */
+    border: none;
+}
+
+/* Mobile ke liye */
+@media (max-width: 768px) {
+    .form-wrapper iframe {
+        min-height: 500px;   /* chhoti screen par height kam */
+        transform: scale(0.95);  /* form thoda shrink */
+        transform-origin: top left;
+    }
+}
 
 </style>
 </head>
@@ -248,9 +271,12 @@ iframe {
                 Contact form will be available soon!
             </p>
 
-            <!-- Google Form iframe -->
-            <h2>Contact Us</h2>
+           <!-- Google Form iframe -->
+<div class="form-wrapper">           
+		   <h2>Contact Us</h2>
+			
           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexAAJOzNZZgWYWAkdj9E6A72gV3DeApgwSoUNKp0nYdFlG_w/viewform?embedded=true"></iframe>
+ </div>
  </div>
 </div>
 
