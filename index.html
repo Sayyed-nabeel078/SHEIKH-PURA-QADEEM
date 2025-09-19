@@ -256,7 +256,7 @@ iframe {
     
     /* iframe ko screen ke according adjust karna */
     iframe {
-        min-height: 800px;  /* fixed height ki jagah thoda flexible */
+        min-height: 400px;  /* fixed height ki jagah thoda flexible */
         height: auto;
     }
 
@@ -284,29 +284,37 @@ iframe {
             animation: pulse 1s infinite;
         }
 
-.form-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-/* Iframe ko full width aur normal height dena */
+/* Google Form responsive fix */
 .form-wrapper iframe {
     width: 100%;
-    min-height: 700px; /* desktop */
+    min-height: 700px;   /* desktop ke liye */
     border: none;
 }
 
-/* Mobile ke liye */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .form-wrapper iframe {
-        min-height: 500px;   /* chhoti screen par height kam */
-        transform: scale(0.95);  /* form thoda shrink */
-        transform-origin: top left;
+        transform: scale(0.8);   /* form 85% size me ho jayega */
+        transform-origin: top center;
+        min-height: 600px;
     }
 }
+
+
+    .form-wrapper iframe {
+        transform: scale(0.8);   /* form chhota ho jayega */
+        transform-origin: top center; 
+        min-height: 600px;        /* height bhi thodi kam */
+    }
+}
+@media (max-width: 200px) {
+    .form-wrapper iframe {
+        transform: scale(0.75);   /* 75% size tak shrink */
+        transform-origin: top center;
+        min-height: 100px;
+    }
+}
+
+
 
 
 </style>
@@ -393,8 +401,7 @@ iframe {
 <div class="form-wrapper">           
 		   <h2>Contact Us</h2>
 			
-          <iframe  src="https://docs.google.com/forms/d/e/1FAIpQLSexAAJOzNZZgWYWAkdj9E6A72gV3DeApgwSoUNKp0nYdFlG_w/viewform?embedded=true"></iframe>
- </div>
+         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexAAJOzNZZgWYWAkdj9E6A72gV3DeApgwSoUNKp0nYdFlG_w/viewform?embedded=true" width="140" height="200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> </div>
  </div>
 </div>
 
