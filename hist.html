@@ -122,17 +122,28 @@ body{
 background-color:white;
 
 }
-#int{
-color:black;
-background-color:lightgreen;
-width:37%;
-height:40px;
-margin-left:35%;
-margin-top:4%;
- border: 2px solid red;
+#int {
+  color: black;
+  background-color: lightgreen;
+  width: 90%;          /* ✅ Mobile me almost full width */
+  max-width: 500px;    /* ✅ Desktop pe limit */
+  height: auto;        /* ✅ Height text ke hisaab se */
+  margin: 20px auto;   /* ✅ Center align har screen pe */
+  border: 2px solid red;
   border-radius: 19px;
-  padding: 5px;
+  padding: 10px 15px;
+  text-align: center;  /* ✅ Text center me */
+  font-size: 1rem;     /* ✅ Base font size */
 }
+
+/* Extra Mobile adjustment */
+@media (max-width: 576px) {
+  #int {
+    font-size: 0.9rem;   /* ✅ Thoda chhota mobile ke liye */
+    padding: 8px 12px;
+  }
+}
+
 #INTRODUCTION{
 margin-left:40%;
 }
