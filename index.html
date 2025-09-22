@@ -14,6 +14,7 @@
   .dropdown-item {
     color: #fff !important;
     font-weight: 500;
+    font-size: 14px; /* 👈 text chhota kar diya */
   }
 
   .nav-link:hover,
@@ -25,10 +26,21 @@
     color: #ccc !important;
   }
 
+  /* Make nav items inline */
+  .navbar-nav {
+    flex-direction: row !important; /* 👈 hamesha row me */
+  }
+
+  .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   /* Search box customization */
   .form-control {
     border-radius: 20px;
-    padding: 8px 15px;
+    padding: 6px 10px;
+    font-size: 13px; /* 👈 chhota input */
     border: none;
   }
 
@@ -37,6 +49,8 @@
     background-color: #28a745;
     color: #fff;
     border: none;
+    font-size: 13px; /* 👈 chhota button */
+    padding: 6px 12px;
   }
 
   .btn-outline-success:hover {
@@ -50,6 +64,7 @@
 
   .dropdown-item {
     color: white;
+    font-size: 14px;
   }
 
   .dropdown-item:hover {
@@ -59,21 +74,21 @@
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-light">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
+  <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
     <a class="navbar-brand" href="index.html">🏠 HOME</a>
     
     <!-- Direct Nav Links -->
-    <ul class="navbar-nav flex-row">
-      <li class="nav-item px-2">
+    <ul class="navbar-nav">
+      <li class="nav-item">
         <a class="nav-link" href="edu.html">🏫 Educations</a>
       </li>
-      <li class="nav-item px-2">
+      <li class="nav-item">
         <a class="nav-link" href="lshops.html">🏪 Old Shops</a>
       </li>
-      <li class="nav-item px-2">
+      <li class="nav-item">
         <a class="nav-link" href="vplaces.html">🏞️ Visit Places</a>
       </li>
-      <li class="nav-item dropdown px-2">
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           🙏 Religions
         </a>
@@ -88,7 +103,7 @@
     </ul>
 
     <!-- Search Form -->
-    <form class="d-flex">
+    <form class="d-flex mt-2 mt-md-0">
       <input class="form-control me-2" type="search" placeholder="Search village info...">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
