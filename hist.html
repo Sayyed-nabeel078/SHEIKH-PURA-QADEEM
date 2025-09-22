@@ -3,7 +3,7 @@
 <style>
   /* Custom Navbar Styling */
   .navbar {
-    background: linear-gradient(to right, #007bff, #00c6ff);
+    background: linear-gradient(to right, #007bff, #00c6ff); /* Blue gradient */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
@@ -12,27 +12,33 @@
   .dropdown-item {
     color: #fff !important;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 14px; /* 👈 text chhota kar diya */
   }
 
   .nav-link:hover,
   .dropdown-item:hover {
-    color: #ffe600 !important;
+    color: #ffe600 !important; /* Yellow on hover */
   }
 
+  .nav-link.disabled {
+    color: #ccc !important;
+  }
+
+  /* Make nav items inline */
   .navbar-nav {
-    flex-direction: row !important;
+    flex-direction: row !important; /* 👈 hamesha row me */
   }
 
   .nav-item {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
+  /* Search box customization */
   .form-control {
     border-radius: 20px;
     padding: 6px 10px;
-    font-size: 13px;
+    font-size: 13px; /* 👈 chhota input */
     border: none;
   }
 
@@ -41,7 +47,7 @@
     background-color: #28a745;
     color: #fff;
     border: none;
-    font-size: 13px;
+    font-size: 13px; /* 👈 chhota button */
     padding: 6px 12px;
   }
 
@@ -49,84 +55,168 @@
     background-color: #218838;
   }
 
-  /* History Section Styling */
-  .intro-box {
-    background-color: lightgreen;
-    border: 2px solid red;
-    border-radius: 19px;
-    padding: 10px;
-    text-align: center;
-    font-weight: 600;
-    margin: 20px auto;
-    max-width: 500px;
+  /* Dropdown Menu Background */
+  .dropdown-menu {
+    background-color: #007bff;
   }
 
-  .history-container {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
+  .dropdown-item {
+    color: white;
+    font-size: 14px;
   }
 
-  .more-text {
-    max-height: 200px;
-    overflow-y: auto;
-    padding: 10px;
-    background: #fff3cd;
-    border-left: 4px solid #ffc107;
-    border-radius: 5px;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  @media (max-width: 768px) {
-    .history-container {
-      padding: 10px;
-    }
-    .more-text {
-      max-height: 150px;
-      font-size: 0.95rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .more-text {
-      max-height: 120px;
-      font-size: 0.9rem;
-    }
+  .dropdown-item:hover {
+    background-color: #0056b3;
   }
 </style>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-light">
   <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
-    <a class="navbar-brand" href="index.html">🏠 HOME</a>
-    <ul class="navbar-nav d-flex flex-row">
-      <li class="nav-item"><a class="nav-link" href="edu.html">🎓 Edu</a></li>
-      <li class="nav-item"><a class="nav-link" href="lshops.html">🏪 Old.Sho</a></li>
-      <li class="nav-item"><a class="nav-link" href="vplaces.html">🏞️ TIC</a></li>
-      <li class="nav-item"><a class="nav-link" href="hist.html">📄 HIST</a></li>
+    <a class="navbar-brand" href="index.html">🏠-HOME</a>
+    
+    <!-- Direct Nav Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="edu.html">🎓Edu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="lshops.html">🏪Old.Sho</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vplaces.html">🏞️TIC</a>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link"href="hist.html">📄HIST</a>
+      </li>
+    
+      
+      </li>
     </ul>
+
+    <!-- Search Form -->
     <form class="d-flex mt-2 mt-md-0">
       <input class="form-control me-2" type="search" placeholder="Search village info...">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
 </nav>
+
 <!-- Bootstrap JS (bundle with Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheikh Pura Qadeem - Village Website</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <html>
 <head>
 <style>
+body{
+background-color:white;
+
+}
+#int{
+color:black;
+background-color:lightgreen;
+width:34%;
+height:40px;
+margin-left:35%;
+margin-top:4%;
+ border: 2px solid red;
+  border-radius: 19px;
+  padding: 5px;
+}
+#INTRODUCTION{
+margin-left:40%;
+}
+.history-container {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  width: 80%;          /* desktop aur mobile dono ke liye flexible */
+  max-width: 600px;    /* desktop me max size */
+  margin: 20px auto;   /* center align, top-bottom space */
+}
+
+.more-text {
+  max-height: 200px;   /* scrollable height */
+  overflow-y: auto;
+  padding: 10px;
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 5px;
+  font-size: 1rem;     /* readable font size */
+  line-height: 1.5;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .history-container {
+    width: 95%;        /* almost full screen */
+    padding: 10px;
+  }
+
+  .more-text {
+    max-height: 150px;
+    font-size: 0.95rem; /* slightly smaller but readable */
+  }
+}
+
+@media (max-width: 480px) {
+  .history-container {
+    width: 95%;
+    padding: 8px;
+  }
+
+  .more-text {
+    max-height: 120px;
+    font-size: 0.9rem; 
+  }
+}
+
+#old{
+margin-left:35%;
+}
 
 </style>
 
 </head>
 
 <body>
+<div class="intro">
 
+<p id="int">WELCOME TO SHEIKHPURA QADEEM <sup>dst-saharanpur</sup></p>
+<h6 id="old">welcome to Sheikh pura qadeem the old name was fakir pura accourding to 1800</h6>
+
+<h6 id="INTRODUCTION">👎👎INTRODUCTION</h6>
+
+
+
+
+<div class="history-container">
+  <p>
+    Sheikh Pura Qadeem is a historic village located in Uttar Pradesh. It has a rich cultural and educational heritage...
+  </p>
+
+  <div class="more-text">
+   <p>Shekhpura Kadeem is a village in Saharanpur district,</p>
+<p>   Uttar Pradesh, India, known for its annual Urs (fair)</p>
+<p> celebrating the Sufi saint Khwaja Shah Alimuddin Chishti.</p>
+<p> The area is part of the Saharanpur tehsil and is locate</p>
+<p> within the geographical region of the district. The village</p>
+<p> also has a post office with the</p>
+<p> pincode 247001 and a local elementary school.</p> 
+  </div>
+</div>
+
+
+</div>
 </body>
 </html>
