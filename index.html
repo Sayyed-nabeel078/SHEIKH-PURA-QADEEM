@@ -299,7 +299,34 @@ iframe {
   height: 100%;
   border: none;
 }
+#demo {
+  color: white;
+  background-color: red;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  animation: shake 1s infinite; /* 👈 hilne wali animation */
+}
 
+/* Shake animation */
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-5px); }
+  50%  { transform: translateX(5px); }
+  75%  { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+#glr{
+margin-left:1%;
+text-decoration:none;
+margin-top:-80%;
+border-radius:18 px;
+
+
+
+
+
+}
 
 
 
@@ -326,6 +353,7 @@ iframe {
 <div class="container">
     <div class="header">
         <h1 class="main-title">Sheikh Pura Qadeem Website Demo</h1>
+		<p id="demo">only demo</p>
 		<h5><i>CREATED BY SAYYED NABEEL</i></h5>
         <p class="subtitle">District Saharanpur, Uttar Pradesh</p>
     </div>
@@ -342,6 +370,7 @@ iframe {
         <p style="color:#666; font-size:1.1rem; line-height:1.6;">
             We are building a comprehensive website for Sheikh Pura Qadeem village. This platform will showcase everything about our beautiful village - from history and culture to local businesses and events.
         </p>
+		<button><a id="glr" href="glr.html">gellry</a></button>
 
         <div style="background:linear-gradient(45deg,#32CD32,#228B22); color:white; padding:25px; border-radius:15px; margin:25px 0; text-align:center; animation:pulse 2s ease-in-out infinite;">
             <h3 style="margin-bottom:15px; font-size:1.5rem;">🚀 Full Info Website Coming Soon!</h3>
