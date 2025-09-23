@@ -284,21 +284,18 @@ iframe {
 }
 
 
-   .form-wrapper {
-  position: relative;
+  .form-wrapper {
   width: 100%;
-  padding-top: 120%; /* aspect ratio maintain karega (height adjust karne ke liye badal sakte ho) */
   overflow: hidden;
 }
 
 .form-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100% !important;   /* force full width */
+  min-height: 650px;
   border: none;
+  transform: none !important; /* 👈 scaling hata do */
 }
+
 #demo {
   color: white;
   background-color: red;
@@ -354,7 +351,7 @@ border-radius:18 px;
     <div class="header">
         <h1 class="main-title">Sheikh Pura Qadeem Website Demo</h1>
 		<p id="demo">only demo</p>
-		<h5><i>CREATED BY SAYYED NABEEL</i></h5>
+		<h5><i>CREATED BY SAYYED NABEEL<sup>Student of OK Soft Solution Institute</sup></i></h5>
         <p class="subtitle">District Saharanpur, Uttar Pradesh</p>
     </div>
 	
@@ -370,7 +367,7 @@ border-radius:18 px;
         <p style="color:#666; font-size:1.1rem; line-height:1.6;">
             We are building a comprehensive website for Sheikh Pura Qadeem village. This platform will showcase everything about our beautiful village - from history and culture to local businesses and events.
         </p>
-		<button><a id="glr" href="glr.html">gellry</a></button>
+		
 
         <div style="background:linear-gradient(45deg,#32CD32,#228B22); color:white; padding:25px; border-radius:15px; margin:25px 0; text-align:center; animation:pulse 2s ease-in-out infinite;">
             <h3 style="margin-bottom:15px; font-size:1.5rem;">🚀 Full Info Website Coming Soon!</h3>
@@ -425,6 +422,13 @@ border-radius:18 px;
          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexAAJOzNZZgWYWAkdj9E6A72gV3DeApgwSoUNKp0nYdFlG_w/viewform?embedded=true" width="140" height="200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> </div>
  </div>
 </div>
+<!-- Font Awesome link (head tag me add karna hoga) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Instagram icon with link -->
+
+
+
 
 <script>
 $(document).ready(function(){
@@ -433,6 +437,34 @@ $(document).ready(function(){
 	
 });
 </script>
+
+
+
+<!-- Footer Start -->
+<!-- Footer Start -->
+<footer style="background:#111; color:white; text-align:center; padding:20px; margin-top:40px;">
+  <p>© 2025 Sheikh Pura Qadeem | All Rights Reserved</p>
+  
+  <p style="margin:8px 0; font-size:14px; color:#ccc;">
+    Developed by <b>Sayyed Nabeel Haider</b><br>
+    Student of <b>OK Soft Solution Institute</b><br>
+    Under the guidance of <b>Sachin Kumar Sir</b>
+  </p>
+  
+  <!-- Social Links -->
+  <a href="https://instagram.com/sayyednabeelhaider.786" target="_blank" 
+     style="text-decoration:none; font-size:30px; color:#E4405F; margin:10px;">
+   SAYYED NABEEL  <i class="fab fa-instagram"></i>
+  </a>
+  <br>
+   <a href="https://instagram.com/oksoftsolution" target="_blank" 
+     style="text-decoration:none; font-size:30px; color:#E4405F; margin:10px;">
+  OK Soft Solution Institute <i class="fab fa-instagram"></i>
+  </a>
+</footer>
+<!-- Footer End -->
+
+<!-- Footer End -->
 
 </body>
 </html>
