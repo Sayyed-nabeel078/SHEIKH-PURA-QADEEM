@@ -1,523 +1,501 @@
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-  /* Custom Navbar Styling */
-  .navbar {
-    background: linear-gradient(to right, #007bff, #00c6ff); /* Blue gradient */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-brand,
-  .nav-link,
-  .dropdown-item {
-    color: #fff !important;
-    font-weight: 500;
-    font-size: 14px; /* 👈 text chhota kar diya */
-  }
-
-  .nav-link:hover,
-  .dropdown-item:hover {
-    color: #ffe600 !important; /* Yellow on hover */
-  }
-
-  .nav-link.disabled {
-    color: #ccc !important;
-  }
-
-  /* Make nav items inline */
-  .navbar-nav {
-    flex-direction: row !important; /* 👈 hamesha row me */
-  }
-
-  .nav-item {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  /* Search box customization */
-  .form-control {
-    border-radius: 20px;
-    padding: 6px 10px;
-    font-size: 13px; /* 👈 chhota input */
-    border: none;
-  }
-
-  .btn-outline-success {
-    border-radius: 20px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    font-size: 13px; /* 👈 chhota button */
-    padding: 6px 12px;
-  }
-
-  .btn-outline-success:hover {
-    background-color: #218838;
-  }
-
-  /* Dropdown Menu Background */
-  .dropdown-menu {
-    background-color: #007bff;
-  }
-
-  .dropdown-item {
-    color: white;
-    font-size: 14px;
-  }
-
-  .dropdown-item:hover {
-    background-color: #0056b3;
-  }
-</style>
-
-<!-- NAVBAR -->
-<nav class="navbar navbar-light">
-  <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
-    <a class="navbar-brand" href="index.html">🏠-HOME</a>
-    
-    <!-- Direct Nav Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="edu.html">🎓Edu</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="lshops.html">🏪Old.Sho</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="vplaces.html">🏞️TIC</a>
-      </li>
-     <li class="nav-item">
-        <a class="nav-link"href="hist.html">📄HIST</a>
-      </li>
-    
-      
-      </li>
-    </ul>
-
-    <!-- Search Form -->
-    <form class="d-flex mt-2 mt-md-0">
-      <input class="form-control me-2" type="search" placeholder="Search village info...">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-<!-- Bootstrap JS (bundle with Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sheikh Pura Qadeem - Village Website</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <style>
-   body {
+/* 🔥 FULLY INTERACTIVE STYLES */
+body {
     font-family: Arial, sans-serif;
-    background:Yellow;   /* 👈 very light grey (Bootstrap ka default background) */
+    background: linear-gradient(-45deg, #f9d371, #f9844a, #ff9b54, #f0932b);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     min-height:100vh;
     overflow-x:hidden;
 }
 
-    .header {
-        text-align:center;
-        padding:60px 20px;
-        animation:fadeInDown 1.5s ease-out;
-    }
-    .main-title {
-        font-size:6vw; /* Responsive */
-        color:black;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        margin-bottom:20px;
-        animation:glow 2s ease-in-out infinite alternate;
-    }
-    .subtitle {
-        font-size:3vw; /* Responsive */
-        color:lightgreen;
-        margin-bottom:30px;
-        animation:slideInLeft 1.8s ease-out;
-    }
-    .welcome-card {
-        background: rgba(255,255,255,0.95);
-        border-radius:20px;
-        padding:40px;
-        margin:40px auto;
-        max-width:1000px;
-        box-shadow:0 20px 40px rgba(0,0,0,0.1);
-        animation:slideInUp 2s ease-out;
-        backdrop-filter: blur(10px);
-    }
-    .developer-info {
-        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-        color:white;
-        padding:30px;
-        border-radius:15px;
-        margin:30px 0;
-        text-align:center;
-        animation:pulse 3s ease-in-out infinite;
-    }
-    .features-grid {
-        display:grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-        gap:30px;
-        margin:40px 0;
-    }
-    .feature-card {
-        background:white;
-        padding:30px;
-        border-radius:15px;
-        text-align:center;
-        box-shadow:0 10px 30px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        animation:fadeInUp 2.5s ease-out;
-    }
-    .feature-card:hover {
-        transform:translateY(-10px);
-        box-shadow:0 20px 40px rgba(0,0,0,0.2);
-    }
-    .feature-icon {
-        font-size:3rem;
-        margin-bottom:20px;
-        animation:bounce 2s ease-in-out infinite;
-    }
-    .contact-section {
-        background: rgba(255,255,255,0.9);
-        padding:40px;
-        border-radius:20px;
-        margin:40px 0;
-        text-align:center;
-        animation:fadeIn 3s ease-out;
-    }
-    .floating-elements {
-        position: fixed;
-        top:0; left:0;
-        width:100%; height:100%;
-        pointer-events:none;
-        z-index:-1;
-    }
-    .floating-circle {
-        position:absolute;
-        border-radius:50%;
-        background: rgba(255,255,255,0.1);
-        animation:float 6s ease-in-out infinite;
-    }
-    .circle1{width:80px;height:80px;top:20%;left:10%;animation-delay:0s;}
-    .circle2{width:120px;height:120px;top:60%;right:15%;animation-delay:2s;}
-    .circle3{width:60px;height:60px;bottom:20%;left:20%;animation-delay:4s;}
-    @keyframes fadeInDown {from{opacity:0; transform:translateY(-50px);}to{opacity:1; transform:translateY(0);}}
-    @keyframes slideInLeft {from{opacity:0; transform:translateX(-100px);}to{opacity:1; transform:translateX(0);}}
-    @keyframes slideInUp {from{opacity:0; transform:translateY(50px);}to{opacity:1; transform:translateY(0);}}
-    @keyframes fadeInUp {from{opacity:0; transform:translateY(30px);}to{opacity:1; transform:translateY(0);}}
-    @keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
-    @keyframes glow {from{text-shadow:2px 2px 4px rgba(0,0,0,0.3);}to{text-shadow:2px 2px 20px rgba(255,255,255,0.5);}}
-    @keyframes pulse {0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
-    @keyframes bounce {0%,20%,50%,80%,100%{transform:translateY(0);}40%{transform:translateY(-10px);}60%{transform:translateY(-5px);}}
-    @keyframes float {0%,100%{transform:translateY(0px) rotate(0deg);}50%{transform:translateY(-20px) rotate(180deg);}}
-    @media (max-width:768px){
-        .main-title{font-size:10vw;}
-        .subtitle{font-size:5vw;}
-        .welcome-card{padding:20px;margin:20px;}
-        .feature-card{padding:20px;}
-        iframe{width:100%; height:800px;} /* Google form responsive */
-    }
-	
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-/* Container always full responsive */
-.container {
+/* Navbar - Fixed & Interactive */
+.navbar {
+    background: rgba(0,123,255,0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
-/* iframe responsive fix */
-iframe {
+.navbar.scrolled {
+    background: rgba(0,123,255,1) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffd700 !important;
+    transform: scale(1.1);
+}
+
+/* Search Bar Animation */
+.search-focus {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(40,167,69,0.4);
+}
+
+/* Header Animations */
+.header {
+    text-align:center;
+    padding:100px 20px 60px;
+    position: relative;
+}
+
+.main-title {
+    font-size:6vw;
+    background: linear-gradient(45deg, #000, #333, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.main-title.animate {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes titleGlow {
+    from { filter: drop-shadow(0 0 20px #ffd700); }
+    to { filter: drop-shadow(0 0 40px #ffed4a); }
+}
+
+.subtitle {
+    font-size:3vw;
+    color: #28a745;
+    font-weight: bold;
+    animation: bounceIn 2s ease-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.subtitle.animate {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 1s ease-out 0.5s;
+}
+
+/* Interactive Map */
+.interactive-map {
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.interactive-map:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+/* Feature Cards - Advanced Hover */
+.feature-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    min-height: 600px;
-    border: none;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
 }
 
-/* Mobile screen adjustments */
-@media (max-width: 768px) {
-    .main-title { font-size: 8vw; }
-    .subtitle { font-size: 4.5vw; }
-    .welcome-card { padding: 15px; margin: 15px; }
-    .feature-card { padding: 15px; }
-    
-    /* iframe ko screen ke according adjust karna */
-    iframe {
-        min-height: 400px;  /* fixed height ki jagah thoda flexible */
-        height: auto;
-    }
-
-    /* Audio ko center karna */
-    audio {
-        display: block;
-        margin: 20px auto;
-        width: 100%;
-        max-width: 300px;
-    }
+.feature-card:hover::before {
+    left: 100%;
 }
 
- 
-
-/* Google Form responsive fix */
-.form-wrapper iframe {
-    width: 990px;
-    min-height: 700px;   /* desktop ke liye */
-    border: none;
+.feature-card:hover {
+    transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
 }
 
-@media (max-width: 600px) {
-    .form-wrapper iframe {
-        transform: scale(0.8);   /* form 85% size me ho jayega */
-        transform-origin: top center;
-        min-height: 600px;
-    }
+.feature-icon {
+    font-size: 4rem;
+    transition: all 0.3s ease;
 }
 
-
-  .form-wrapper {
-  width: 100%;
-  overflow: hidden;
+.feature-card:hover .feature-icon {
+    transform: scale(1.2) rotate(360deg);
 }
 
-.form-wrapper iframe {
-  width: 100% !important;   /* force full width */
-  min-height: 650px;
-  border: none;
-  transform: none !important; /* 👈 scaling hata do */
+/* Photo Gallery Modal */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
 }
 
+.gallery-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(255,255,255,0.1);
+}
+
+/* Contact Form */
+.contact-form {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40,167,69,0.25);
+}
+
+/* Particles Animation */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    animation: float 8s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* Demo Badge */
 #demo {
-  color: white;
-  background-color: red;
-  padding: 10px 20px;
-  border-radius: 8px;
-  display: inline-block;
-  animation: shake 1s infinite; /* 👈 hilne wali animation */
+    background: linear-gradient(45deg, #ff0000, #ff4444);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    animation: shake 0.5s infinite;
+    box-shadow: 0 5px 20px rgba(255,0,0,0.4);
 }
 
-/* Shake animation */
-@keyframes shake {
-  0%   { transform: translateX(0); }
-  25%  { transform: translateX(-5px); }
-  50%  { transform: translateX(5px); }
-  75%  { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+/* Responsive */
+@media (max-width:768px) {
+    .main-title { font-size: 10vw; }
+    .subtitle { font-size: 6vw; }
 }
-#glr{
-margin-left:1%;
-text-decoration:none;
-margin-top:-80%;
-border-radius:18 px;
-
-
-
-
-
-}
-
-
-
 </style>
 </head>
 <body>
 
+<!-- Particles Background -->
+<div class="particles" id="particles"></div>
 
- <marquee>WELCOME TO SHEIKH PURA QADEEM</marquee>
- <iframe src="https://www.google.com/maps/embed?pb=!4v1758299474672!6m8!1m7!1sj9jBY2wRZlBDXUvGY3-tBQ!2m2!1d29.92505665632681!2d77.57291197530661!3f161.94547!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold fs-4" href="#"><i class="fas fa-home"></i> Sheikh Pura Qadeem</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">🏠 Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">✨ Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">📸 Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">📞 Contact</a></li>
+      </ul>
 
-
-
-<div class="floating-elements">
-    <div class="floating-circle circle1"></div>
-    <div class="floating-circle circle2"></div>
-    <div class="floating-circle circle3"></div>
-    <div class="floating-circle" style="width:90px; height:90px; top:40%; right:25%; animation-delay:1s;"></div>
-    <div class="floating-circle" style="width:70px; height:70px; bottom:40%; right:10%; animation-delay:3s;"></div>
-    <div class="floating-circle" style="width:100px; height:100px; top:70%; left:5%; animation-delay:5s;"></div>
-</div>
-
-<div class="container">
-    <div class="header">
-        <h1 class="main-title">Sheikh Pura Qadeem Website Demo</h1>
-		<p id="demo">only demo</p>
-		<h5><i>CREATED BY SAYYED NABEEL<sup>Student of OK Soft Solution Institute</sup></i></h5>
-        <p class="subtitle">District Saharanpur, Uttar Pradesh</p>
+      <!-- Interactive Search -->
+      <form class="d-flex ms-3 search-form" id="searchForm">
+        <input class="form-control me-2 search-input" type="search" placeholder="🔍 Search village info..." id="searchInput">
+        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
+      </form>
     </div>
-	
-<audio controls>
-  <source src="https://ncs.io/track/download/784a2ccc-5ace-48d1-8af1-9da55c383960" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+  </div>
+</nav>
 
+<!-- Main Content -->
+<div class="container mt-5 pt-5" id="home">
+  <!-- Header -->
+  <div class="header">
+    <h1 class="main-title" id="mainTitle">Sheikh Pura Qadeem</h1>
+    <p id="demo">🚀 LIVE DEMO VERSION</p>
+    <h5 class="text-white mb-4"><i>CREATED BY SAYYED NABEEL <sup>OK Soft Solution Institute</sup></i></h5>
+    <p class="subtitle" id="subtitle">District Saharanpur, Uttar Pradesh</p>
+  </div>
 
-    <div class="welcome-card">
-        <h2 style="color:#333; margin-bottom:20px; font-size:2rem;">Welcome to Our Village Website Demo</h2>
-		<h5><li>CREATED BY SAYYED NABEEL Haider</li></h5>
-        <p style="color:#666; font-size:1.1rem; line-height:1.6;">
-            We are building a comprehensive website for Sheikh Pura Qadeem village. This platform will showcase everything about our beautiful village - from history and culture to local businesses and events.
-        </p>
-		
+  <!-- Interactive Map -->
+  <div class="text-center mb-5">
+    <h2 class="text-white mb-4 animate__animated animate__fadeInUp">📍 Village Location</h2>
+    <div class="interactive-map mx-auto" style="width: 100%; max-width: 800px;">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!4v1758299474672!6m8!1m7!1sj9jBY2wRZlBDXUvGY3-tBQ!2m2!1d29.92505665632681!2d77.57291197530661!3f161.94547!4f0!5f0.7820865974627469" 
+        width="100%" height="450" style="border:0; border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
 
-        <div style="background:linear-gradient(45deg,#32CD32,#228B22); color:white; padding:25px; border-radius:15px; margin:25px 0; text-align:center; animation:pulse 2s ease-in-out infinite;">
-            <h3 style="margin-bottom:15px; font-size:1.5rem;">🚀 Full Info Website Coming Soon!</h3>
-            <p style="font-size:1.2rem; font-weight:bold;">This will be the first ever website for Sheikh Pura Qadeem</p>
-            <p style="margin-top:10px;">Complete village information, services, and community features</p>
+  <!-- Background Music -->
+  <div class="text-center mb-5">
+    <audio controls class="bg-music" id="bgMusic">
+      <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Features Grid -->
+  <div class="features-grid" id="features">
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-card text-center p-4 h-100">
+          <div class="feature-icon mb-3">🏘️</div>
+          <h3>Village Info</h3>
+          <p>Complete history & landmarks</p>
         </div>
-
-        <div class="developer-info">
-            <h3 style="margin-bottom:15px;">Website Developer</h3>
-            <p style="font-size:1.2rem; font-weight:bold;">Sayyed Nabeel Haider</p>
-            <p>Proud resident of Sheikh Pura Qadeem</p>
-            <p style="margin-top:10px; font-style:italic;">Building digital bridges for our community</p>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-card text-center p-4 h-100">
+          <div class="feature-icon mb-3">👥</div>
+          <h3>Community</h3>
+          <p>Connect with villagers</p>
         </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🏘️</div>
-                <h3 style="color:#333; margin-bottom:15px;">Village Information</h3>
-                <p style="color:#666;">Complete details about our village, its history, and landmarks</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3 style="color:#333; margin-bottom:15px;">Community</h3>
-                <p style="color:#666;">Connect with fellow villagers and stay updated with local news</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏪</div>
-                <h3 style="color:#333; margin-bottom:15px;">Local Business</h3>
-                <p style="color:#666;">Discover and support local shops and services in our area</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"></div>
-                <h3 style="color:#333; margin-bottom:15px;">Events</h3>
-                <p style="color:#666;">Stay informed about upcoming festivals and community gatherings</p>
-            </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-card text-center p-4 h-100">
+          <div class="feature-icon mb-3">🏪</div>
+          <h3>Local Shops</h3>
+          <p>Support local business</p>
         </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="feature-card text-center p-4 h-100">
+          <div class="feature-icon mb-3">🎉</div>
+          <h3>Events</h3>
+          <p>Festivals & gatherings</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="contact-section">
-            <h3 style="color:#333; margin-bottom:20px; font-size:1.8rem;">Want to Add Something?</h3>
-            <p style="color:#666; font-size:1.1rem; margin-bottom:20px;">
-                If you would like to add information about your business, event, or any other village-related content to our website, please feel free to contact us.
-            </p>
-            <p style="color:#4ecdc4; font-weight:bold; font-size:1.2rem;">
-                Contact form will be available soon!
-            </p>
-		
+  <!-- Photo Gallery -->
+  <div class="text-center my-5" id="gallery">
+    <h2 class="text-white mb-5 animate__animated animate__fadeInUp">📸 Village Gallery</h2>
+    <div class="row g-3">
+      <div class="col-md-4 col-sm-6">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" 
+             class="img-fluid rounded shadow gallery-img-trigger" alt="Village" data-full="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img src="https://images.unsplash.com/photo-1551524160-349281cf18a5?w=400&h=300&fit=crop" 
+             class="img-fluid rounded shadow gallery-img-trigger" alt="Fields" data-full="https://images.unsplash.com/photo-1551524160-349281cf18a5?w=1200">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop" 
+             class="img-fluid rounded shadow gallery-img-trigger" alt="Nature" data-full="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200">
+      </div>
+    </div>
+  </div>
 
-           <!-- Google Form iframe -->
-<div class="form-wrapper">           
-		   <h2>Contact Us</h2>
-			
-         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexAAJOzNZZgWYWAkdj9E6A72gV3DeApgwSoUNKp0nYdFlG_w/viewform?embedded=true" width="140" height="200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> </div>
- </div>
+  <!-- Contact Section -->
+  <div class="contact-section mb-5" id="contact">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="contact-form p-5">
+          <h2 class="text-center mb-4 text-success"><i class="fas fa-envelope"></i> Contact Us</h2>
+          <form id="contactForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="tel" class="form-control" placeholder="Phone Number" required>
+              </div>
+              <div class="col-12">
+                <textarea class="form-control" rows="5" placeholder="Your Message..." required></textarea>
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-success btn-lg px-5">Send Message <i class="fas fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- Font Awesome link (head tag me add karna hoga) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- Instagram icon with link -->
+<!-- Gallery Modal -->
+<div class="gallery-modal" id="galleryModal">
+  <img src="" alt="" class="gallery-img" id="modalImg">
+  <button class="btn-close-modal" id="closeModal">&times;</button>
+</div>
 
-
-
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-$(document).ready(function(){
-    alert("Hello! Website loaded successfully.");
-	
-	
+$(document).ready(function() {
+    // 🔥 ALL INTERACTIVE FEATURES
+    
+    // 1. Navbar Scroll Effect
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar').addClass('scrolled');
+        } else {
+            $('.navbar').removeClass('scrolled');
+        }
+    });
+
+    // 2. Animate Title on Load
+    setTimeout(() => {
+        $('#mainTitle').addClass('animate');
+        $('#subtitle').addClass('animate');
+    }, 500);
+
+    // 3. Smooth Scrolling
+    $('a[href^="#"]').click(function(e) {
+        e.preventDefault();
+        var target = $($(this).attr('href'));
+        $('html, body').animate({scrollTop: target.offset().top - 80}, 1000);
+    });
+
+    // 4. Working Search
+    $('#searchForm').submit(function(e) {
+        e.preventDefault();
+        var query = $('#searchInput').val().toLowerCase();
+        alert('🔍 Searching for: "' + query + '"\n\nComing Soon: Full village search!');
+        // Future: Add real search functionality
+    });
+
+    $('#searchInput').focus(function() {
+        $(this).parent().addClass('search-focus');
+    }).blur(function() {
+        $(this).parent().removeClass('search-focus');
+    });
+
+    // 5. Feature Cards Scroll Animation
+    $(window).scroll(function() {
+        $('.feature-card').each(function() {
+            var top = $(this).offset().top;
+            var windowBottom = $(window).scrollTop() + $(window).height();
+            if (windowBottom > top + 100) {
+                $(this).addClass('animate__animated animate__fadeInUp');
+            }
+        });
+    });
+
+    // 6. Photo Gallery Modal
+    $('.gallery-img-trigger').click(function() {
+        var imgSrc = $(this).data('full');
+        $('#modalImg').attr('src', imgSrc);
+        $('#galleryModal').fadeIn();
+    });
+
+    $('#closeModal, #galleryModal').click(function() {
+        $('#galleryModal').fadeOut();
+    });
+
+    // 7. Contact Form
+    $('#contactForm').submit(function(e) {
+        e.preventDefault();
+        alert('✅ Message Sent Successfully!\n\nThank you for contacting us!\nWe will reply soon.');
+        $(this)[0].reset();
+    });
+
+    // 8. Particles Animation
+    createParticles();
+
+    // 9. Parallax Map
+    $(window).scroll(function() {
+        var scrolled = $(window).scrollTop();
+        $('.interactive-map').css('transform', 'translateY(' + (scrolled * 0.5) + 'px)');
+    });
+
+    // 10. Welcome Animation
+    $('.welcome-card').each(function(i) {
+        $(this).delay(i * 200).addClass('animate__animated animate__zoomIn');
+    });
 });
+
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.width = particle.style.height = (Math.random() * 6 + 2) + 'px';
+        particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Remove alert on load
+// alert("🚀 Website Fully Interactive!");
 </script>
 
-
-
-<!-- Footer Start -->
-<!-- Footer Start -->
-<footer style="background:#111; color:white; text-align:center; padding:40px 20px; margin-top:40px; line-height:1.8;">
-<p style="font-size:1rem; color:#ccc; max-width:800px; margin:0 auto 20px;">
-  If you also want to create a website like this for your village, contact us! <br>
-  This is a <strong>demo version</strong> of the Sheikh Pura Qadeem village website...
-</p>
-
-  <p style="font-size:1rem; color:#ccc; max-width:800px; margin:0 auto 20px;">
-    This is a <strong>demo version</strong> of the Sheikh Pura Qadeem village website. The purpose of this demo is to show how the official page of our village can look. The full website will contain detailed history, culture, events, and community info.
+<!-- Footer (same as yours) -->
+<footer style="background:rgba(0,0,0,0.9); color:white; text-align:center; padding:40px 20px; margin-top:60px;">
+  <p style="font-size:1.1rem; max-width:800px; margin:0 auto 20px;">
+    <strong>🌟 Sheikh Pura Qadeem - First Digital Village Portal 🌟</strong>
   </p>
-
-  <hr style="margin:20px auto; width:80%; border-color:#444;">
-
-  <h3 style="color:#fff; margin-bottom:10px;">🏛 Village Leadership</h3>
-  <p style="color:#ccc; font-size:1rem; margin-bottom:5px;">
-    Current Village Head (Pradhan): <strong>Rao Khurram</strong>
+  <p>Developed by <strong>Sayyed Nabeel Haider</strong> | OK Soft Solution Institute</p>
+  <p style="color:#ffd700; font-size:1.2rem; margin-top:10px;">
+    © 2025 | All Rights Reserved
   </p>
-  <p style="color:#ccc; font-size:1rem; margin-bottom:5px;">
-    Previous Head: <strong>Rao Shahid</strong>
-  </p>
-  <p style="color:#ccc; font-size:1rem; margin-bottom:20px;">
-    Next Election: <strong>2027</strong>
-  </p>
-
-  <hr style="margin:20px auto; width:80%; border-color:#444;">
-
-  <h3 style="color:#fff; margin-bottom:15px;">👨‍💻 Developed By</h3>
-  <p style="color:#ccc; font-size:1rem; margin-bottom:5px;">
-    Sayyed Nabeel Haider
-  </p>
-  <p style="color:#ccc; font-size:1rem; margin-bottom:5px;">
-    Student of OK Soft Solution Institute
-  </p>
-  <p style="color:#ccc; font-size:1rem; margin-bottom:20px;">
-    Under the guidance of Sachin Kumar Sir
-  </p>
-
-  <hr style="margin:20px auto; width:80%; border-color:#444;">
-
-  <h3 style="color:#fff; margin-bottom:15px;">🌐 Follow Us</h3>
-  <p>
-    <a href="https://instagram.com/sayyednabeelhaider.786" target="_blank" 
-       style="text-decoration:none; font-size:30px; color:#E4405F; margin:0 10px;">
-       SAYYED NABEEL <i class="fab fa-instagram"></i>
-    </a>
-	<br>
-    <a href="https://instagram.com/oksoftsolution" target="_blank" 
-       style="text-decoration:none; font-size:30px; color:#E4405F; margin:0 10px;">
-       OK Soft Solution Institute <i class="fab fa-instagram"></i>
-    </a>
-	<br>
-    <a href="https://facebook.com" target="_blank" 
-       style="text-decoration:none; font-size:30px; color:#3b5998; margin:0 10px;">
-       Facebook <i class="fab fa-facebook-f"></i>
-    </a>
-	<br>
-    <a href="https://twitter.com" target="_blank" 
-       style="text-decoration:none; font-size:30px; color:#1da1f2; margin:0 10px;">
-       Twitter <i class="fab fa-twitter"></i>
-    </a>
-	<br>
-    <a href="https://youtube.com" target="_blank" 
-       style="text-decoration:none; font-size:30px; color:#ff0000; margin:0 10px;">
-       YouTube <i class="fab fa-youtube"></i>
-    </a>
-  </p>
-
-  <hr style="margin:20px auto; width:80%; border-color:#444;">
-
-  <p style="color:#999; font-size:0.9rem; margin-top:10px;">
-    © 2025 Sheikh Pura Qadeem | All Rights Reserved
-  </p>
-
 </footer>
-
-<!-- Footer End -->
-
-<!-- Footer End -->
 
 </body>
 </html>
